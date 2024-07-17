@@ -1,0 +1,18 @@
+<div class="flex justify-center items-center h-screen">
+  <div class="w-full max-w-4xl p-6 bg-white shadow-md rounded-lg">
+    <div class="header bg-blue-600 text-white p-4 rounded shadow-md mb-6">
+      <h1 class="text-3xl font-bold">Edit Task <%= @task.id %></h1>
+      <div class="actions">
+        <.link href={~p"/tasks/#{@task}"}>
+          <.button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg">
+            Show Task
+          </.button>
+        </.link>
+      </div>
+    </div>
+
+    <.task_form changeset={@changeset} action={~p"/tasks/#{@task}"} />
+
+    <.back navigate={~p"/tasks"}>Back to tasks</.back>
+  </div>
+</div>
